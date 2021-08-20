@@ -25,7 +25,6 @@ jobs:
           cd $GITHUB_WORKSPACE
           mkdir -p Auto_Miui/tools
 
-      - name: 获取UUID...
+      - name: 获取空间...
         run: |
-          code=$(sudo dmidecode -s system-uuid | tr 'A-Z' 'a-z')
-          echo $code
+          df -h
