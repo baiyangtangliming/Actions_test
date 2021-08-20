@@ -25,11 +25,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           mkdir -p Auto_Miui/tools
 
-      - name: 获取代号...
+      - name: 获取UUID...
         run: |
-          cd $GITHUB_WORKSPACE/Auto_Miui
-          code=$(echo ${{ github.event.inputs.ZIP_NAME }} | cut -d _ -f 2| tr -d '\r' |tr -d '\n')
-          echo xiaowan_$code > tools/project.txt
-          cat tools/project.txt
-          rm -rf xiaowan_$code
-          mkdir -p xiaowan_$code/00_project_files/logs
+          code=$(sudo dmidecode -s system-uuid | tr 'A-Z' 'a-z')
+          echo $code
