@@ -1,0 +1,44 @@
+name: test
+
+on:
+  workflow_dispatch:
+    inputs:
+      ROM_URL:
+        description: 'ROM_URL'
+        required: false
+        default: 'https://bigota.d.miui.com/V12.5.7.0.RJACNXM/miui_CMI_V12.5.7.0.RJACNXM_e895dd1b1a_11.0.zip'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: 获取本仓库源码...
+        uses: actions/checkout@main
+
+      - name: 创建目录...
+        run: |
+          cd $GITHUB_WORKSPACE
+          mkdir -p Auto_Miui/outputzip
+
+      - name: 生成4G文件并分割...
+        run: |
+          cd $GITHUB_WORKSPACE/Auto_Miui
+          echo "Mi 10 Pro_V12.5.7.0.RJACNXM_38deb0_sta_11.zip" > temp.txt
+          dd if=/dev/zero of="outputzip/1.zip" bs=1M count=3000
+          files=$(cat temp.txt | grep ".zip")
+          echo "INFO=$(cat temp.txt | grep ".zip")" >> $GITHUB_ENV
+          sed -i 's/ /_/' temp.txt
+          echo "TAG=$(cat temp.txt | grep ".zip")" >> $GITHUB_ENV
+          mv "outputzip/1.zip" "1.zip"
+          if [ $(ls -l "1.zip" | awk '{print $5}') -gt 2147483647 ]; then split -d -b 1024m "1.zip" "outputzip/$files"; else mv "1.zip" "outputzip/$files"; fi
+          echo "--------------------------------------"
+          ls outputzip
+          echo "--------------------------------------"
+      - name: 上传至Release...
+        uses: ncipollo/release-action@v1.8.6
+        with:
+          artifacts: ${{ github.workspace }}/Auto_Miui/outputzip/*
+          name: ${{ env.INFO }}
+          tag: ${{ env.TAG }}
+          token: ${{ secrets.GITHUB_TOKEN }}
