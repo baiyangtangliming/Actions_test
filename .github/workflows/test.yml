@@ -35,7 +35,7 @@ jobs:
           sed -i 's/ /_/g' temp.txt
           echo "TAG=$(cat temp.txt | grep ".zip")" >> $GITHUB_ENV
           mv "outputzip/1.zip" "1.zip"
-          if [ $(ls -l "1.zip" | awk '{print $5}') -gt 2147483647 ]; then split -d -b 1024m "1.zip" "outputzip/$files"; else mv "1.zip" "outputzip/$files"; fi
+          if [ $(ls -l "1.zip" | awk '{print $5}') -gt 2147483647 ]; then split -d -b 1536m "1.zip" "outputzip/$files"; else mv "1.zip" "outputzip/$files"; fi
           echo "--------------------------------------"
           ls outputzip
           echo "--------------------------------------"
