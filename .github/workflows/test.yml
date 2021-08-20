@@ -28,7 +28,7 @@ jobs:
           dd if=/dev/zero of="outputzip/1.zip" bs=1M count=3000
           files=$(cat temp.txt | grep ".zip")
           echo "INFO=$(cat temp.txt | grep ".zip")" >> $GITHUB_ENV
-          sed -i 's/ /_/' temp.txt
+          sed -i 's/ /_/g' temp.txt
           echo "TAG=$(cat temp.txt | grep ".zip")" >> $GITHUB_ENV
           mv "outputzip/1.zip" "1.zip"
           if [ $(ls -l "1.zip" | awk '{print $5}') -gt 2147483647 ]; then split -d -b 1024m "1.zip" "outputzip/$files"; else mv "1.zip" "outputzip/$files"; fi
