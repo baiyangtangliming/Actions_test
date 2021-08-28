@@ -1,0 +1,8 @@
+2021-08-29 00:42:31 [main.py:25] cli INFO - Version:2.7.10
+2021-08-29 00:42:31 [core.py:180] get_user_info INFO - Get user information.
+2021-08-29 00:42:31 [core.py:522] token_refresh INFO - Token has been refreshed.
+2021-08-29 00:42:36 [core.py:107] get_file_list INFO - Get the list of parent_file_id root.
+2021-08-29 00:50:49 [main.py:25] cli INFO - Version:2.7.10
+2021-08-29 00:50:49 [core.py:180] get_user_info INFO - Get user information.
+2021-08-29 00:50:49 [core.py:522] token_refresh INFO - Token has been refreshed.
+2021-08-29 00:50:50 [core.py:107] get_file_list INFO - Get the list of parent_file_id root.
