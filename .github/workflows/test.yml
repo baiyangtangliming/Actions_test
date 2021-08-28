@@ -24,4 +24,4 @@ jobs:
       - name: 上传阿里云...
         run: |
           cd $GITHUB_WORKSPACE/aliyun
-          python3 main.py upload hello.txt AcmeTeam官改/
+          python main.py upload hello.txt AcmeTeam官改/
