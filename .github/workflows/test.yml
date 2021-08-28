@@ -25,4 +25,5 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE/aliyun
           today=$(date +%y.%-m.%-d)
+          python main.py mkdir AcmeTeam官改/$today
           python main.py upload hello.txt AcmeTeam官改/$today
