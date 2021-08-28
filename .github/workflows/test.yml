@@ -18,12 +18,12 @@ jobs:
 
       - name: 创建文件...
         run: |
-          cd $GITHUB_WORKSPACE/aliyun
+          cd $GITHUB_WORKSPACE
           dd if=/dev/zero of=hello.txt bs=100M count=1
       
       - name: 上传阿里云...
         run: |
-          cd $GITHUB_WORKSPACE/aliyun
+          cd $GITHUB_WORKSPACE
           today=$(date +%y.%-m.%-d)
-          python main.py mkdir AcmeTeam官改/$today
-          python main.py upload hello.txt AcmeTeam官改/$today
+          python aliyun/main.py mkdir AcmeTeam官改/$today
+          python aliyun/main.py upload hello.txt AcmeTeam官改/$today
