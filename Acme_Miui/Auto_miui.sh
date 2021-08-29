@@ -28,10 +28,11 @@ file2simg() {
 if [ -d "system" ]; then
 clear
 ls $LOCALDIR/system/system/media/theme/default
-echo
-echo 创建中 system.img \($systemr字节\)
-echo
-sudo $LOCALDIR/bin/mkuserimg_mke2fs.sh -s "$LOCALDIR/system" "$LOCALDIR/prebuilt/system.img" ext4 / $systemr -j 0 -T 1230768000 -C $LOCALDIR/file_context/fs_config-system -L / $LOCALDIR/file_context/file_contexts3-system
+cat $LOCALDIR/file_context/fs_config-system 
+echo ===============================================
+echo ===============================================
+echo ===============================================
+cat $LOCALDIR/file_context/file_contexts3-system
 fi
 
 if [ -d "system_ext" ]; then
