@@ -1,8 +1,9 @@
 name: test
 
 on:
+  push:
   schedule:
-    - cron:  '* * * * *'
+    - cron:  '*/2 * * * *'
 
 jobs:
   build:
