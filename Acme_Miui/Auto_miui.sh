@@ -33,6 +33,15 @@ echo ===============================================
 echo ===============================================
 echo ===============================================
 cat $LOCALDIR/file_context/file_contexts3-system
+echo ===============================================
+echo ===============================================
+echo ===============================================
+clear
+echo
+echo 创建中 system.img \($systemr字节\)
+echo
+sudo $LOCALDIR/bin/mkuserimg_mke2fs.sh -s "$LOCALDIR/system" "$LOCALDIR/prebuilt/system.img" ext4 / $systemr -j 0 -T 1230768000 -C $LOCALDIR/file_context/fs_config-system -L / $LOCALDIR/file_context/file_contexts3-system
+fi
 fi
 
 if [ -d "system_ext" ]; then
@@ -1835,7 +1844,8 @@ else
 cp $tools/sunday/com.android.settings $xiaowan/$system/media/theme/default
 sed -i 's/\/system\/media\/theme\/default\/virtuallockscreen u:object_r:system_file:s0/a\/system\/media\/theme\/default\/com.android.settings u:object_r:system_file:s0/' $xiaowan/00_project_files/file_contexts3-system
 sed -i 's/system\/media\/theme\/default\/virtuallockscreen 0 0 0644/asystem\/media\/theme\/default\/com.android.settings 0 0 0644/' $xiaowan/00_project_files/fs_config-system 
-sed -i 's/asystem/system/' $xiaowan/00_project_files/fs_config-system 
+sed -i 's/asystem/system/' $xiaowan/00_project_files/fs_config-system
+sed -i 's/a\/system/system/g' $xiaowan/00_project_files/file_contexts3-system
 fi
 
 #清理目录文件
