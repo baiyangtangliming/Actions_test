@@ -3,12 +3,11 @@ name: test
 on:
   push:
   schedule:
-    - cron:  '*/2 * * * *'
+    - cron:  '*/5 * * * *'
 
 jobs:
-  build:
+  bot:
     runs-on: ubuntu-20.04
-
     steps:
       - name: 获取本仓库源码...
         uses: actions/checkout@main
