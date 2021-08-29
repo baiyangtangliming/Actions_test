@@ -27,6 +27,7 @@ fi
 file2simg() {
 if [ -d "system" ]; then
 clear
+ls $LOCALDIR/system/system/media/theme/default
 echo
 echo 创建中 system.img \($systemr字节\)
 echo
