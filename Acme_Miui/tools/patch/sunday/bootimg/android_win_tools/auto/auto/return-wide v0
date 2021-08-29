@@ -1,0 +1,8 @@
+    .locals 2
+
+    const-wide/16 v1, 0x0
+
+    move-wide v0, v1
+
+    return-wide v0
+

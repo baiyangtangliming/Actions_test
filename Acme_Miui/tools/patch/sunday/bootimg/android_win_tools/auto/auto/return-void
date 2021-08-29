@@ -1,0 +1,5 @@
+    .registers 9
+
+    return-void
+
+

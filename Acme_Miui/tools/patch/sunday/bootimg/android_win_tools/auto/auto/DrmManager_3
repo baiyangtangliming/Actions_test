@@ -1,0 +1,7 @@
+    .locals 1
+
+    sget-object v0, Lmiui/drm/DrmManager$DrmResult;->DRM_SUCCESS:Lmiui/drm/DrmManager$DrmResult;
+
+    return-object v0
+
+

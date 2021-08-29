@@ -1,0 +1,23 @@
+ALIOTH=Redmi K40
+HAYDN=Redmi K40 Pro(Pro+)
+THYME=Mi 10S
+VENUS=Mi 11
+STAR=Mi 11 Pro(Ultra)
+RENOIR=MI 11 lite
+
+GAUGUIN=Redmi Note 9 Pro
+APOLLP=Redmi K30S Ultra
+CRUX=Mi 9 Pro 5G
+RAPHAEL=Redmi K20 Pro(Ultra)
+CEPHEUS=Mi 9
+UMI=Mi 10
+CMI=Mi 10 Pro
+CAS=Mi 10 Ultra
+PICASSO=Redmi K30 5G
+
+LMI=Redmi K30 Pro
+PHOENIX=Redmi K30
+ATOM=Redmi 10X 5G
+BOMB=Redmi 10X Pro
+CEZANNE=Redmi K30 Ultra
+APOLLO=Redmi K30S Ultra

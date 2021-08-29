@@ -1,0 +1,8 @@
+    .registers 9
+
+    const/4 v0, 0x0
+
+    return v0
+
+
+

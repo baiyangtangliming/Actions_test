@@ -1,0 +1,6 @@
+    .locals 2
+
+    const-string v0, ""
+
+    return-object v0
+
