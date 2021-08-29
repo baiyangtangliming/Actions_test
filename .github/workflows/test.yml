@@ -2,6 +2,8 @@ name: test
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * *'
 
 jobs:
   build:
@@ -11,20 +13,6 @@ jobs:
       - name: 获取本仓库源码...
         uses: actions/checkout@main
 
-      - name: 安装环境...
+      - name: test
         run: |
-          sudo -E apt-get install python3 python3-pip default-jre -y
-          pip install aliyunpan
-
-      - name: 创建文件...
-        run: |
-          cd $GITHUB_WORKSPACE
-          mkdir output
-          dd if=/dev/zero of=output/hello.txt bs=100M count=1
-      
-      - name: 上传阿里云...
-        run: |
-          cd $GITHUB_WORKSPACE/aliyun
-          today=$(date +%y.%-m.%-d)
-          python main.py mkdir AcmeTeam官改/$today
-          python main.py upload ../output/hello.txt AcmeTeam官改/$today
+          echo test
