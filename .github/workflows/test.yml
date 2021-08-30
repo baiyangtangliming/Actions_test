@@ -12,26 +12,6 @@ jobs:
 
       - name: 清理环境...
         run: |
-          docker rmi `docker images -q`
-          sudo rm -rf /usr/share/dotnet /etc/mysql /etc/apt/sources.list.d
-          sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
-          sudo -E apt-get update
-          sudo -E apt-get -y autoremove --purge
-          sudo -E apt-get clean
+          echo test
           df -h
-      - name: 配置环境...
-        run: |
-          sudo -E apt-get install -y git wget git zip unzip curl axel
-          sudo -E apt-get install python3 python3-pip default-jre aria2 -y
-          sudo -E apt update --fix-missing
-          pip install protobuf
-          pip install aliyunpan
-      
-      - name: 开始制作下载并测试..
-        run: |
-          cd $GITHUB_WORKSPACE/Acme_Miui/
-          mkdir ./officialzip
-          mkdir ./outputzip
-          export TERM=xterm
-          bash mi9.sh
-
+  
